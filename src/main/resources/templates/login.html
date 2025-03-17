@@ -22,7 +22,8 @@
             </div>
             <hr>
             <button type="submit" class="btn btn-primary">Ingresar</button>
-            <div class="alert alert-danger" role="alert">
+            <div th:if="${mostrarAlert}" class="alert alert-danger" role="alert">
+                <span th:text="${mensaje} ?: ''"></span>
             </div>
         </form>
     </div>
