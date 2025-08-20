@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="layout::head">
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">
 </head>
 <body>
+<nav th:replace="layout::menu"></nav>
 <div class="card">
     <div class="card-header text-bg-danger">
         IMC
