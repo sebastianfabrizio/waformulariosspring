@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap/bootstrap.css}">
 </head>
 <body>
-
+<div class="card">
+    <div class="card-header text-bg-danger">
+        IMC
+    </div>
+    <div class="card-body">
+        <form th:action="@{/imc}" method="post" th:object="${imcModel}">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="txtTalla"
+                       placeholder="Talla" th:field="*{talla}">
+                <label for="txttalla">Talla</label>
+            </div>
+            <div class="form-floating">
+                <input type="number" class="form-control" id="txtPeso"
+                       placeholder="Peso" th:field="*{peso}">
+                <label for="txtPeso">Peso</label>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-success">Calcular</button>
+            <div th:if="${mostrarAlerta}" class="alert alert-danger" role="alert">
+                <span th:text="${resultado} ?: ''"></span>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

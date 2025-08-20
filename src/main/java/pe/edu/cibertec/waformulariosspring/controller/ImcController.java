@@ -11,8 +11,6 @@ import pe.edu.cibertec.waformulariosspring.model.ImcModel;
 @Controller
 public class ImcController {
 
-
-
     @GetMapping("/imc")
     public String InicioImc(Model model){
         model.addAttribute("imcModel", new ImcModel());
@@ -46,7 +44,7 @@ public class ImcController {
         }
         model.addAttribute("mostrarAlerta", true);
         model.addAttribute("resultado", "Su valor imc es: "
-                + String.format("%.2f", valorImc)+", usted se encuentra" + diagnostico);
+                + String.format("%.2f", valorImc)+", usted se encuentra: " + diagnostico);
         return "imc";
     }
 }
